@@ -276,6 +276,10 @@ ul, li {
     width: 30%;
     margin-left: 35%;
   }
+  .nav-header .logo-ibuy img {
+    display: block;
+    margin: auto;
+  }
   .nav-header .usuario {
     float: right;
   }
