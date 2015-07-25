@@ -1,0 +1,21 @@
+ <div class="conteudo" ng-controller="DetalhesController">
+	 <div class="lista">
+		  <ul>
+	     	<li ng-repeat="produto in lista.produtos">
+	        <div class="descricao-detalhes selecionado-{{produto.selecionado}}">
+	        	<span class="produto">{{produto.produto}}</span>
+	        	<span class="valor">R${{produto.valor}}</span>
+	        </div>
+	      </li>
+	    </ul>
+	    <div class="detalhes-rodape">
+		    <div class="total">
+	    		<p><b>Total: </b>R$ {{total}}</p>
+	  	  </div>
+	    	<div class="btn-voltar">
+	    		<a ui-sref="home"><i class="fa fa-long-arrow-left"></i></a>
+	    	</div>
+	    </div>
+	    <div class="limpar"></div>
+	</div>
+</div>

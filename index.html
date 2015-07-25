@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <title>iBuy</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Uma pequena lista de tarefas usando PHP e Angularjs">
+    <meta name="author" content="Jeremias Pereira - jeremiastpereira@gmail.com">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+    <script src="assets/angularjs/angular.min.js"></script>
+    <script src="assets/angularjs/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="assets/jquery/jquery-1.11.3.js"></script>
+    <script src="assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+
+    <link href="assets/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="nav-corretora">
+        <div class="logo-corretora"></div>
+        <div class="nome-corretora">
+          iBuy
+        </div>
+      </nav>
+    </header>
+   
+   	<section ui-view> </section> 
+
+  </body>
+  <footer class="footer">
+
+  </footer>
+</html>

@@ -1,0 +1,79 @@
+ <div class="conteudo" ng-controller="HomeController">
+	 <div class="lista">
+	    <ul>
+	     	<li ng-repeat="produto in lista.produtos">
+	     	  <a ui-sref="detalhes">
+		        <div class="descricao selecionado-{{produto.selecionado}}">
+		        	<span class="produto">{{produto.produto}}</span>
+		        	<span class="valor">R${{produto.valor}}</span>
+		        </div>
+					</a>
+	        <div class="acao">
+	          <div class="btn-selecionar" title="Desativas">
+	         		<input type="checkbox" ng-model="produto.selecionado" ng-click="select(produto)">
+	          </div>
+
+	          <div ng-click="edit(produto)" class="btn-editar">
+	         		<i class="fa fa-pencil-square-o"></i>
+	          </div>
+
+	          <div ng-click="remover(produto)" class="btn-remover" title="Mudar prioridade">
+	            <i class="fa fa-times"></i>
+	          </div>
+	        </div>
+	        <div class="limpar"></div>
+	        <div class="form-edit" id="edit-{{produto.id}}"></div>
+	      </li>
+	    </ul>
+
+	  	<div class="btn-add">
+	  		<p ng-click="toggleCustom()">+</p>
+	  	</div>
+
+			<div id="formAdd">
+				<form ng-submit="add()" ng-hide="customAdd">
+					<div class="row">
+						<div class="col-mb-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 reset-padding">
+							<div class="form-group">
+						  	<input class="form-control" type="text" ng-model="lista.addProduto"  size="30" placeholder="Produto">
+							</div>  
+						</div>
+
+						<div class="col-mb-12 col-xs-2 col-sm-2 col-md-2 col-lg-2 reset-padding">
+							<div class="form-group">
+							  <input class="form-control" type="text" ng-model="lista.addValor" placeholder="Valor">
+							</div>
+						</div>
+
+						<div class="col-mb-12 col-xs-2 col-sm-2 col-md-2 col-lg-2 reset-padding">
+						 <input class="btn btn-primary" type="submit" value="Add">
+						</div>
+					</div>
+				</form>
+			</div>
+
+		<div id="edit-0">	
+			<div id="formEdit">
+				<form ng-submit="edit()" ng-hide="customEdit">
+					<div class="row">
+						<div class="col-mb-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 reset-padding">
+							<div class="form-group">
+						  	<input class="form-control" type="text" ng-model="lista.editProduto"  size="30" placeholder="Novo produto">
+							</div>  
+						</div>
+
+						<div class="col-mb-12 col-xs-2 col-sm-2 col-md-2 col-lg-2 reset-padding">
+							<div class="form-group">
+							  <input class="form-control" type="text" ng-model="lista.editValor" placeholder="valor">
+							</div>
+						</div>
+
+						<div class="col-mb-12 col-xs-2 col-sm-2 col-md-2 col-lg-2 reset-padding">
+						 <input class="btn btn-primary" type="submit" value="Save">
+						</div>
+					</div>
+				</form>
+			</div><!--end #formEdit-->
+		</div><!--end #form-0-->
+	</div><!--end .conteudo-->
+</div>
