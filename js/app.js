@@ -7,13 +7,13 @@
   lista.produtos = [
     {
       id: 1,
-      produto:"feijão",
+      produto:"Feijão",
       valor : 10,
       selecionado: false
     },
     {
       id: 2,
-      produto:"arroz", 
+      produto:"Arroz", 
       valor: 5,
       selecionado : false
     }
@@ -22,7 +22,7 @@
   app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', function($stateProvider, $urlRouterProvider) {    
     $urlRouterProvider.otherwise("/erro-404");
     $stateProvider
-    
+
     .state('login', {
       url: "",
       views: {

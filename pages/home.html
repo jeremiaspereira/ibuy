@@ -13,12 +13,12 @@
 	         		<input type="checkbox" ng-model="produto.selecionado" ng-click="select(produto)">
 	          </div>
 
-	          <div ng-click="edit(produto)" class="btn-editar">
-	         		<i class="fa fa-pencil-square-o"></i>
+	          <div ng-click="edit(produto)" class="btn-editar" title="Editar">
+	         		<i class="fa fa-pencil"></i>
 	          </div>
 
-	          <div ng-click="remover(produto)" class="btn-remover" title="Mudar prioridade">
-	            <i class="fa fa-times"></i>
+	          <div ng-click="remover(produto)" class="btn-remover" title="Excluir">
+	            <i class="fa fa-trash-o"></i>
 	          </div>
 	        </div>
 	        <div class="limpar"></div>
@@ -26,8 +26,8 @@
 	      </li>
 	    </ul>
 
-	  	<div class="btn-add">
-	  		<p ng-click="toggleCustom()">+</p>
+	  	<div class="btn-add" title="Novo produto">
+	  		<span ng-click="toggleCustom()"> <i class="fa fa-plus-square-o"></i></span>
 	  	</div>
 
 			<div id="formAdd">

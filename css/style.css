@@ -86,35 +86,31 @@ ul, li {
 /* ==========================================================================
    Login
    ========================================================================== */
-.logo-login {
-  display: block;
-  margin: 10px auto;
-}
-
 .form-login {
   background: #fff none repeat scroll 0 0;
   border-radius: 5px;
-  margin: 50px auto 0;
-  max-width: 330px;
+  margin: auto;
+  max-width: 300px;
+  margin-top: 10%;
 }
-
-.form-login h2.form-login-heading {
-  background: #63a0dd none repeat scroll 0 0;
+.form-login .form-login-heading {
+  background: #fff;
   border-radius: 5px 5px 0 0;
-  color: #fff;
-  font-size: 20px;
   font-weight: 300;
   margin: 0;
-  padding: 25px 20px;
+  padding: 35px 0 10px 0;
   text-align: center;
-  text-transform: uppercase;
 }
-
-.login-wrap {
-  padding: 20px;
+.form-login .login-wrap {
+  padding: 15px;
 }
-
-.btn-login {
+.form-login input {
+  margin: 10px 0;
+}
+.form-login a {
+  margin: 10px 0;
+}
+.form-login .btn-login {
   background-color: #63a0dd;
   border-color: #609bd6;
   color: #fff;
@@ -189,6 +185,14 @@ ul, li {
   padding: 5px 0;
 }
 
+.fa-trash-o {
+  color: #FA9292;
+}
+
+.fa-pencil {
+  color: #46B19D;
+}
+
 .btn-remover, .btn-editar, .btn-selecionar {
   width: 33.33333%;
   float: left;
@@ -215,23 +219,18 @@ ul, li {
   margin-top: 25px;
   text-align: center;
 }
-.btn-add p {
-  background: #63a0dd;
-  border-radius: 100%;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 35px;
-  font-weight: 100;
-  height: 45px;
-  width: 45px;
-  line-height: 40px;
-  text-align: center;
+.btn-add span {
+  color: #63a0dd;
+  font-size: 2.5em;
 }
 
 /* ==========================================================================
   P├ígina de detalhes
    ========================================================================== */
+.detalhes-header {
+  padding: 5px 10px;
+}
+
 .descricao-detalhes {
   position: relative;
   border-bottom: solid 1px #ddd;
@@ -247,9 +246,12 @@ ul, li {
 }
 .detalhes-rodape .total {
   float: right;
+  padding-top: 3px;
 }
 .detalhes-rodape .btn-voltar {
   float: left;
+  font-size: 2em;
+  padding: 3px;
 }
 
 .reset-padding {
