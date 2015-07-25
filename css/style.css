@@ -86,6 +86,11 @@ ul, li {
 /* ==========================================================================
    Login
    ========================================================================== */
+.logo-login {
+  display: block;
+  margin: 10px auto;
+}
+
 .form-login {
   background: #fff none repeat scroll 0 0;
   border-radius: 5px;
@@ -118,28 +123,29 @@ ul, li {
 /* ==========================================================================
    navbar
    ========================================================================== */
-.nav-corretora {
-  height: 61px;
-  padding: 3px 2%;
-  background: #f3f3f5;
+.nav-header {
+  background: #fff;
   border-bottom: solid 1px #e5e5e5;
 }
-
-.nav-corretora .logo-corretora {
-  position: absolute;
-  background: url("../../img/logo-m.png") no-repeat;
-  height: 50px;
-  width: 17%;
+.nav-header .logo-ibuy {
+  padding: 10px;
+  width: 30%;
+  float: left;
 }
-
-.nav-corretora .nome-corretora {
-  position: absolute;
-  margin-left: 17%;
-  width: 62%;
-  padding: 0.5em 0;
-  color: #5487bd;
-  text-align: center;
-  font-size: 1.0em;
+.nav-header .usuario {
+  float: right;
+}
+.nav-header .usuario .nome {
+  padding: 0 10px;
+}
+.nav-header .usuario .navbar-nav {
+  margin: 0;
+}
+.nav-header .usuario img {
+  display: none;
+}
+.nav-header .usuario .dropdown-toggle {
+  padding: 25px;
 }
 
 /* ==========================================================================
@@ -265,7 +271,18 @@ ul, li {
 /* ==========================================================================
    Tela m├¡nima 550px largura
    ========================================================================== */
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 470px) {
+  .nav-header .logo-ibuy {
+    width: 30%;
+    margin-left: 35%;
+  }
+  .nav-header .usuario {
+    float: right;
+  }
+  .nav-header .usuario .nome {
+    padding: 0 10px;
+  }
+
   .descricao {
     width: 80%;
   }
@@ -278,6 +295,23 @@ ul, li {
    Tela m├¡nima 780px largura
    ======================================================================== */
 @media screen and (min-width: 780px) {
+  .nav-header .logo-ibuy {
+    width: 30%;
+    margin-left: 35%;
+  }
+  .nav-header .usuario {
+    float: right;
+  }
+  .nav-header .usuario img {
+    display: inline;
+  }
+  .nav-header .usuario .nome {
+    padding: 0 10px;
+  }
+  .nav-header .usuario .dropdown-toggle {
+    padding: 13px;
+  }
+
   .descricao {
     width: 85%;
   }

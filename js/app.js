@@ -21,32 +21,39 @@
 
   app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', function($stateProvider, $urlRouterProvider) {    
     $urlRouterProvider.otherwise("/erro-404");
-    
     $stateProvider
-      .state('login', {
-        url: "",
-        templateUrl: "pages/login.html",
-        controller : "LoginController",
-      })
-      .state('home', {
-        url: "/home",
-        templateUrl: "pages/home.html",
-        controller: 'HomeController',
-      })
-      .state('detalhes', {
-        url: "/detalhes",
-        templateUrl: "pages/detalhes.html",
-        controller: 'DetalhesController',
-      })
-      .state('erro-404', {
-        url: "/erro-404",
-        templateUrl: "pages/erro-404.html",
-        controller: 'ErroController',
-      });       
+    
+    .state('login', {
+      url: "",
+      views: {
+        "conteudo": { templateUrl: "pages/login.html" }
+      }
+    })
+    .state('home', {
+      url: "/home",
+      views: {
+        "menu": { templateUrl: "pages/header.html" },
+        "conteudo": { templateUrl: "pages/home.html" }
+      },
+      controller: 'HomeController',
+    })
+    .state('detalhes', {
+      url: "/detalhes",
+      views: {
+        "menu": { templateUrl: "pages/header.html" },
+        "conteudo": { templateUrl: "pages/detalhes.html" }
+      },
+      controller: 'DetalhesController'
+    })
+
+    .state('erro-404', {
+      url: "/erro-404",
+      views: {
+        "conteudo": { templateUrl: "pages/erro-404.html" }
+      }
+    });       
   }]);
 
-  app.controller("LoginController", ['$scope', function ($scope) {
-  }]);
 
   app.controller("HomeController", ['$scope', function ($scope) {
 
@@ -143,17 +150,9 @@
   }]);
 
 
-
-
-
-
   app.controller("DetalhesController", ['$scope', function ($scope) {
     $scope.lista = lista;
     $scope.total = total;
-  }]);
-
-  app.controller("ErroController", ['$scope', function ($scope) {
-
   }]);
 
 
