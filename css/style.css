@@ -279,14 +279,14 @@ ul, li {
   float: right;
 }
 
-.detalhes-rodape {
+.lista-detalhes-rodape {
   padding: 10px 10px 0 0;
 }
-.detalhes-rodape .total {
+.lista-detalhes-rodape .total {
   padding-top: 3px;
   float: right;
 }
-.detalhes-rodape .btn-voltar {
+.lista-detalhes-rodape .btn-voltar {
   font-size: 2em;
   padding: 3px;
   float: left;
