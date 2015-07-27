@@ -1,4 +1,4 @@
-  var app = angular.module('myapp', ['ui.router']);
+  var app = angular.module('myapp', ['ui.router', 'ngAnimate']);
 
   var id = 3;
   var total = 0;
@@ -8,16 +8,17 @@
     {
       id: 1,
       produto:"Feijão",
-      valor : 10,
+      valor : "10",
       selecionado: false
     },
     {
       id: 2,
       produto:"Arroz", 
-      valor: 5,
+      valor: "5",
       selecionado : false
     }
   ];
+
 
   app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', function($stateProvider, $urlRouterProvider) {    
     $urlRouterProvider.otherwise("/erro-404");
@@ -55,14 +56,13 @@
   }]);
 
 
-  app.controller("HomeController", ['$scope', function ($scope) {
-
+  app.controller("HomeController", ['$scope','$animate', function ($scope, $animate) {
     $scope.lista = lista;
     $scope.total = 0;
 
     $scope.add = function(){
       if($scope.testeNumero(lista.addValor) && lista.addProduto != undefined){
-        lista.produtos.push({produto: lista.addProduto, valor: parseInt(lista.addValor), id: $scope.getId(), selecionado: false});
+        lista.produtos.push({produto: lista.addProduto, valor: lista.addValor.replace('.',','), id: $scope.getId(), selecionado: false});
         lista.addProduto = "";
         lista.addValor = "";
       }
@@ -85,7 +85,7 @@
 
         var myEl = angular.element( document.querySelector( '#edit-'+p.id ) );
         myEl.prepend(document.querySelector('#formEdit'));
-        $scope.customEdit = false;  
+        $scope.customEdit = $scope.customEdit === false ? true : false;
       }else{
         if($scope.testeNumero(lista.editValor) && lista.editProduto != ""){
           var listaAntiga = lista.produtos;
@@ -93,7 +93,7 @@
           angular.forEach(listaAntiga, function(produto) {
             if (produto.id == $scope.lista.editId){
               produto.produto = lista.editProduto;
-              produto.valor = parseInt(lista.editValor);
+              produto.valor = lista.editValor.replace('.',',');
               lista.produtos.push(produto);  
             }else{
               lista.produtos.push(produto);
@@ -122,15 +122,15 @@
     };
 
     $scope.atualizarTotal = function(){
-      total = "";
       if(lista.produtos.length > 0){
         total = 0;
         angular.forEach(lista.produtos, function(produto) {
           if(produto.selecionado == true){
-            total = total + produto.valor;
+            //var valor = produto.valor;
+            total = total + parseFloat(produto.valor.replace(',', '.'));
           }
         });
-      }  
+      }
       $scope.total = total;
     };
 
@@ -144,11 +144,11 @@
      return id++;
     };
 
-    $scope.testeNumero = function(input) {
-      return (input - 0) == input && (''+input).trim().length > 0 && input > 0 ;
+    $scope.testeNumero = function(n) {
+      n = n.replace(',','.');
+      return !isNaN(parseFloat(n)) && isFinite(n);
     };
   }]);
-
 
   app.controller("DetalhesController", ['$scope', function ($scope) {
     $scope.lista = lista;

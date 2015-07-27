@@ -9,8 +9,8 @@ html {
 }
 body, input, textarea {
   font: 1.4em 'Open Sans', sans-serif;
-  font-weight: normal;
   font-style: normal;
+  font-weight: normal;
   line-height: 2.3em;
   color: #474646;
   background: #E6E6E6;
@@ -29,8 +29,8 @@ h6 {
 }
 
 h1 {
-  font-size: 2.0em;
-  line-height: 1.5em;
+  font-size: 2.5em;
+  line-height: 1;
   font-style: normal;
   font-weight: 300;
 }
@@ -87,19 +87,19 @@ ul, li {
    Login
    ========================================================================== */
 .form-login {
-  background: #fff none repeat scroll 0 0;
   border-radius: 5px;
   margin: auto;
   max-width: 300px;
   margin-top: 10%;
+  background: #fff none repeat scroll 0 0;
 }
 .form-login .form-login-heading {
-  background: #fff;
-  border-radius: 5px 5px 0 0;
+  text-align: center;
   font-weight: 300;
+  border-radius: 5px 5px 0 0;
   margin: 0;
   padding: 35px 0 10px 0;
-  text-align: center;
+  background: #fff;
 }
 .form-login .login-wrap {
   padding: 15px;
@@ -111,17 +111,33 @@ ul, li {
   margin: 10px 0;
 }
 .form-login .btn-login {
-  background-color: #63a0dd;
-  border-color: #609bd6;
   color: #fff;
+  border-color: #609bd6;
+  background-color: #63a0dd;
+}
+
+/* ==========================================================================
+   erro 404
+   ========================================================================== */
+.erro-404 {
+  text-align: center;
+  margin: auto;
+  max-width: 300px;
+  margin-top: 10%;
+  padding: 10px;
+  background: #fff;
+}
+.erro-404 h1 {
+  color: #FE8B8B;
+  font-weight: 600;
 }
 
 /* ==========================================================================
    navbar
    ========================================================================== */
 .nav-header {
-  background: #fff;
   border-bottom: solid 1px #e5e5e5;
+  background: #fff;
 }
 .nav-header .logo-ibuy {
   padding: 10px;
@@ -148,8 +164,8 @@ ul, li {
    lista
    ========================================================================== */
 .lista {
-  background: #fff;
   padding: 10px;
+  background: #fff;
 }
 
 .conteudo {
@@ -165,11 +181,12 @@ ul, li {
 
 .descricao {
   position: relative;
-  border-bottom: solid 1px #ddd;
-  float: left;
+  word-wrap: break-word;
   width: 75%;
   padding: 5px;
   margin: 1px 0;
+  border-bottom: solid 1px #ddd;
+  float: left;
 }
 .descricao .valor {
   float: right;
@@ -177,12 +194,12 @@ ul, li {
 
 .acao {
   position: relative;
-  float: left;
+  text-align: center;
   width: 24.8%;
   margin-top: 2px;
   margin-left: 0.2%;
-  text-align: center;
   padding: 5px 0;
+  float: left;
 }
 
 .fa-trash-o {
@@ -204,15 +221,21 @@ ul, li {
   color: #ddd;
 }
 
+.lista-home-rodape {
+  width: 75%;
+  padding-top: 10px;
+}
+.lista-home-rodape p {
+  float: right;
+}
+
 #formAdd {
   padding: 5px;
   margin-top: 10px;
 }
 
 .form-edit #formEdit {
-  margin: 5px 0;
   padding: 15px 5px 0 5px;
-  border-left: solid 5px #ddd;
 }
 
 .btn-add {
@@ -220,8 +243,23 @@ ul, li {
   text-align: center;
 }
 .btn-add span {
-  color: #63a0dd;
   font-size: 2.5em;
+  color: #63a0dd;
+}
+
+.form {
+  opacity: 1;
+}
+
+.form.ng-hide-add.ng-hide-add-active,
+.form.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.form.ng-hide {
+  line-height: 0;
+  opacity: 0;
 }
 
 /* ==========================================================================
@@ -245,13 +283,13 @@ ul, li {
   padding: 10px 10px 0 0;
 }
 .detalhes-rodape .total {
-  float: right;
   padding-top: 3px;
+  float: right;
 }
 .detalhes-rodape .btn-voltar {
-  float: left;
   font-size: 2em;
   padding: 3px;
+  float: left;
 }
 
 .reset-padding {
@@ -289,7 +327,8 @@ ul, li {
     padding: 0 10px;
   }
 
-  .descricao {
+  .descricao,
+  .lista-home-rodape {
     width: 80%;
   }
 
@@ -318,7 +357,8 @@ ul, li {
     padding: 13px;
   }
 
-  .descricao {
+  .descricao,
+  .lista-home-rodape {
     width: 85%;
   }
 
@@ -327,7 +367,7 @@ ul, li {
   }
 }
 /* ==========================================================================
-   Tela m├¡nima 1300px largura
+   Tela m├¡nima 1200px largura
    ========================================================================== */
 @media screen and (min-width: 1200px) {
   .conteudo {
@@ -336,7 +376,8 @@ ul, li {
     margin-right: auto;
   }
 
-  .descricao {
+  .descricao,
+  .lista-home-rodape {
     width: 90%;
   }
 

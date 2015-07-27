@@ -1,11 +1,11 @@
- <div class="conteudo" ng-controller="HomeController">
-	 <div class="lista">
-	    <ul>
+ 	<div class="conteudo" ng-controller="HomeController">
+	 	<div class="lista">
+	    <ul>  		
 	     	<li ng-repeat="produto in lista.produtos">
 	     	  <a ui-sref="detalhes">
 		        <div class="descricao selecionado-{{produto.selecionado}}">
 		        	<span class="produto">{{produto.produto}}</span>
-		        	<span class="valor">R${{produto.valor}}</span>
+		        	<span class="valor">R$ {{produto.valor}}</span>
 		        </div>
 					</a>
 	        <div class="acao">
@@ -23,19 +23,30 @@
 	        </div>
 	        <div class="limpar"></div>
 	        <div class="form-edit" id="edit-{{produto.id}}"></div>
+	        <div class="limpar"></div>
 	      </li>
+	    	<li ng-show="!lista.produtos.length">
+	    		<div class="descricao"> Nenhum item em sua lista de compras! </div>
+	    		<div class="limpar"></div>
+	    	</li>
 	    </ul>
+
+		  <div class="lista-home-rodape">
+		    <div class="total">
+	    		<p><b>Total: </b>R$ {{total}}</p>
+	  	  </div>
+			</div>
 
 	  	<div class="btn-add" title="Novo produto">
 	  		<span ng-click="toggleCustom()"> <i class="fa fa-plus-square-o"></i></span>
 	  	</div>
 
 			<div id="formAdd">
-				<form ng-submit="add()" ng-hide="customAdd">
+				<form ng-submit="add()" class=	"form" ng-hide="customAdd">
 					<div class="row">
 						<div class="col-mb-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 reset-padding">
 							<div class="form-group">
-						  	<input class="form-control" type="text" ng-model="lista.addProduto"  size="30" placeholder="Produto">
+						  	<input class="form-control" type="text" ng-model="lista.addProduto" maxlength="50" placeholder="Produto">
 							</div>  
 						</div>
 
@@ -52,13 +63,12 @@
 				</form>
 			</div>
 
-		<div id="edit-0">	
-			<div id="formEdit">
-				<form ng-submit="edit()" ng-hide="customEdit">
+			<div id="edit-0">	
+				<form ng-submit="edit()" id="formEdit" class="form" ng-hide="customEdit">
 					<div class="row">
 						<div class="col-mb-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 reset-padding">
 							<div class="form-group">
-						  	<input class="form-control" type="text" ng-model="lista.editProduto"  size="30" placeholder="Novo produto">
+						  	<input class="form-control" type="text" ng-model="lista.editProduto" maxlength="50"  placeholder="Novo produto">
 							</div>  
 						</div>
 
@@ -69,11 +79,10 @@
 						</div>
 
 						<div class="col-mb-12 col-xs-2 col-sm-2 col-md-2 col-lg-2 reset-padding">
-						 <input class="btn btn-primary" type="submit" value="Save">
+						 <input class="btn btn-primary" type="submit" value="Salvar">
 						</div>
 					</div>
 				</form>
-			</div><!--end #formEdit-->
-		</div><!--end #form-0-->
+			</div><!--end #form-0-->
+		</div><!--end .conteudo-->
 	</div><!--end .conteudo-->
-</div>
