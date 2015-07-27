@@ -19,7 +19,6 @@
     }
   ];
 
-
   app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', function($stateProvider, $urlRouterProvider) {    
     $urlRouterProvider.otherwise("/erro-404");
     $stateProvider
@@ -36,7 +35,7 @@
         "menu": { templateUrl: "pages/header.html" },
         "conteudo": { templateUrl: "pages/home.html" }
       },
-      controller: 'HomeController',
+      controller: 'HomeController'
     })
     .state('detalhes', {
       url: "/detalhes",
@@ -54,7 +53,6 @@
       }
     });       
   }]);
-
 
   app.controller("HomeController", ['$scope','$animate', function ($scope, $animate) {
     $scope.lista = lista;
