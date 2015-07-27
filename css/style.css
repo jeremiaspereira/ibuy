@@ -239,7 +239,7 @@ ul, li {
 }
 
 .btn-add {
-  margin-top: 25px;
+  margin-top: 50px;
   text-align: center;
 }
 .btn-add span {
@@ -283,12 +283,12 @@ ul, li {
   padding: 10px 10px 0 0;
 }
 .lista-detalhes-rodape .total {
-  padding-top: 3px;
+  padding-top: 6px;
   float: right;
 }
-.lista-detalhes-rodape .btn-voltar {
+.lista-detalhes-rodape .btn-voltar a {
   font-size: 2em;
-  padding: 3px;
+  padding: 0 3px;
   float: left;
 }
 

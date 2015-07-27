@@ -237,7 +237,7 @@
   .form-edit #formEdit{ padding:15px 5px 0 5px; }
   
   .btn-add{
-    margin-top: 25px; 
+    margin-top: 50px; 
     text-align: center;
 
     span{
@@ -278,13 +278,13 @@
     padding:10px 10px 0 0;
 
     .total{
-      padding-top: 3px;
+      padding-top: 6px;
       float:right;
     }
 
-    .btn-voltar{
+    .btn-voltar a{
       font-size: 2em;
-      padding:3px;
+      padding: 0 3px;
       float:left;
     }
   }  
